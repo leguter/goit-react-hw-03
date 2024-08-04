@@ -1,8 +1,8 @@
 import { Field, Formik, Form } from "formik";
 import { nanoid } from "nanoid";
-const ContactForm = (
-       addCard
-) => {
+const ContactForm = ({
+    addCard,
+}) => {
     const userNameId = nanoid();
     const userNumberId =  nanoid(); 
     return (
@@ -11,7 +11,7 @@ const ContactForm = (
                 userName: "",
                 userNumber: "",
             }}
-            onSubmit={() => { addCard(Form.userName.value, Form.userNumber.value); }}
+            onSubmit={(values) => { addCard(values)}}
       >
         <Form>
           <label>

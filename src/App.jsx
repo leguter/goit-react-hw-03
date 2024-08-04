@@ -2,6 +2,7 @@ import "./App.css";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 import ContactForm from "./ContactForm/ContactForm";
 function App() {
   const [cards, setCards] = useState([
@@ -16,7 +17,7 @@ function App() {
     // setCard(card.filter(card => ))
   };
   function addCard({userName, userNumber})  {
-    setCards(...cards, { name: userName, number: userNumber})
+    setCards([...cards, { id:nanoid(),name: userName, number: userNumber}])
   }
   const filteredCards = cards.filter((card) => card.name.toLowerCase().includes(filter.toLowerCase()))
   return (
