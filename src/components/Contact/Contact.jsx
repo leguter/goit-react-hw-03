@@ -2,7 +2,7 @@ import css from './Contact.module.css'
 const Contact = ({
     number,
     name,
-
+ deleteCard,
 }) => {
 
     return (
@@ -11,7 +11,7 @@ const Contact = ({
           <p className={css.name}>{name}</p>
           <p className={css.name}>{number}</p>
         </span>
-        <button type="button" className={css.deleteBtn}>Delete</button>
+        <button type="button" onClick={deleteCard} className={css.deleteBtn}>Delete</button>
       </div>
     );
 }

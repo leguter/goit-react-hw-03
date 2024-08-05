@@ -14,18 +14,22 @@ function App() {
   const [filter, setFilter] = useState("")
   const handleChange = (evt) => {
     setFilter(evt.target.value);
+   
     // setCard(card.filter(card => ))
   };
   function addCard({userName, userNumber})  {
     setCards([...cards, { id:nanoid(),name: userName, number: userNumber}])
   }
   const filteredCards = cards.filter((card) => card.name.toLowerCase().includes(filter.toLowerCase()))
+  function deleteCard(item) {
+     setCards(cards.filter((card) => card.id !== item.id));
+  }
   return (
     <div>
       <h1>Phonebook</h1>
       <ContactForm addCard={addCard} />
       <SearchBox value={filter} onChange={handleChange} />
-      <ContactList cards={filteredCards} />
+      <ContactList cards={filteredCards} deleteCard={deleteCard} />
     </div>
   );
 }
