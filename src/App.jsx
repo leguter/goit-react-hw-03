@@ -34,7 +34,7 @@ function App() {
     
   }
 useEffect(() => {
-  window.localStorage.setItem("cards", JSON.stringify({ cards }));
+  window.localStorage.setItem("cards", JSON.stringify( cards ));
 }, [cards]);
   return (
     <div>

@@ -7,7 +7,7 @@ const ContactForm = ({ addCard }) => {
   const userNumberId = nanoid();
   const FeedbackSchema = Yup.object().shape({
     userName: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-    userNumber: Yup.string().min(2, "Too Short!").max(8, "Too Long!").required("Required"),
+    userNumber: Yup.string().min(2, "Too Short!").max(12, "Too Long!").required("Required"),
   });
 
   return (
